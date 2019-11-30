@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ('./Signup.css');
 
 class Form extends Component {
   constructor(props) {
@@ -6,7 +7,9 @@ class Form extends Component {
     this.state = {
       firstName: '',
       lastName: '',
-      birthDate: new Date().toLocaleDateString(),
+      birthDay: '',
+      birthMonth: '',
+      birthYear: '',
       email: '',
       password: '',
       confirmPassword: '',
@@ -19,13 +22,7 @@ class Form extends Component {
   handleChange(event) {
     const target = event.target;
     const name = target.name;
-    let value;
-
-    if (name === 'birthDate') {
-      value = new Date(target.value).toLocaleDateString();
-    } else {
-      value = target.value;
-    }
+    const value = target.value;
 
     this.setState({
       [name]: value
@@ -39,50 +36,79 @@ class Form extends Component {
   render() {
     console.log(this.state)
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          First Name
+      <form onSubmit={this.handleSubmit} className='signup-form'>
           <input
             name='firstName'
+            placeholder='First Name'
             type='text'
             onChange={this.handleChange} />
-        </label>
-        <label>
-          Last Name
+
           <input
             name='lastName'
+            placeholder='Last Name'
             type='text'
             onChange={this.handleChange} />
-        </label>
-        <label>
-          Birth Date
-          <input
-            name='birthDate'
-            type='date'
-            onChange={this.handleChange} />
-        </label>
-        <label>
-          Email
+
+          <label>
+            Date of Birth
+          </label>
+          <section>
+            <input
+              name='birthDay'
+              placeholder='Day'
+              type='number'
+              max={31}
+              min={1}
+              maxLength={2}
+              onChange={this.handleChange} />
+
+            <select
+              name='birthMonth'
+              onChange={this.handleChange} > 
+              <option defaultValue='selected'>Month</option>
+              <option value='01'>January</option>
+              <option value='02'>February</option>
+              <option value='03'>March</option>
+              <option value='04'>April</option>
+              <option value='05'>May</option>
+              <option value='06'>June</option>
+              <option value='07'>July</option>
+              <option value='08'>August</option>
+              <option value='09'>September</option>
+              <option value='10'>October</option>
+              <option value='11'>November</option>
+              <option value='12'>December</option>
+            </select>
+
+            <input
+              name='birthYear'
+              placeholder='Year'
+              type='number'
+              max={new Date().getFullYear() - 18}
+              min={1900}
+              maxLength={4}
+              onChange={this.handleChange} />
+          </section>
+
           <input
             name='email'
+            placeholder='Email'
             type='email'
             onChange={this.handleChange} />
-        </label>
-        <label>
-          Password
+
           <input
             name='password'
+            placeholder='Password'
             type='password'
             onChange={this.handleChange} />
-        </label>
-        <label>
-          Confirm Password
+
           <input
             name='confirmPassword'
+            placeholder='Confirm Password'
             type='password'
             onChange={this.handleChange} />
-        </label>
 
+          <button type='submit'>Signup</button>
       </form>
     );
   }
