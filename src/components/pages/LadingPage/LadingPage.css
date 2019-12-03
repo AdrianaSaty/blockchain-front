@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Iceland&display=swap');
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+.landing-container {
+  position: relative;
+}
+
+.landing {
+  height: 95vh;
+}
+
+.landing h1 {
+  font-size: 6vh;
+  text-align: left;
+}
+
+.landing p {
+  font-size: 2.5vh;
+}
+
+.landing img {
+  height: 100%;
+  width: 100%;
+}
+
+.col-itens {
+  max-width: 300px;
+}
+
+.landing-titles {
+  font-size: 3vh;
+}
+
+.landing-text {
+  font-size: 2vh;
+}
+
+body {
+  background-color: #222222;
+}
+
+
+/*Neon*/
+h1 {
+  text-align: center;
+  font-size: 7em;
+  margin: 20h1x 0 20px 0;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+h1, a {
+  color: #fff;
+  font-family: Monoton;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+h1, a:hover {
+  color: #f2b423;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
+
+h1, a {
+  font-size: 4em;
+  color: white;    /*  #ff8400; amarelo claro*/
+  font-family: Iceland;
+}
+
+h1, a:hover {
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+h1, a:hover {
+  color: #f2b423;
+}
+/*glow for webkit*/
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 5px #f2b423, 0 0 10px #f2b423, 0 0 15px #f2b423;
+  }
+  to {
+    text-shadow: 0 0 5px #f2b423, 0 0 10px #f2b423, 0 0 15px #f2b423;
+  }
+}
+
+/*glow for mozilla*/
+
+@-moz-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #f2b423, 0 0 20px #f2b423, 0 0 30px #f2b423;
+  }
+  to {
+    text-shadow: 0 0 5px #f2b423, 0 0 10px #f2b423, 0 0 15px #f2b423;
+  }
+}
+
+/*glow*/
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #f2b423, 0 0 20px #f2b423, 0 0 30px #f2b423;
+  }
+  to {
+    text-shadow: 0 0 5px #f2b423, 0 0 10px #f2b423, 0 0 15px #f2b423;
+  }
+}
