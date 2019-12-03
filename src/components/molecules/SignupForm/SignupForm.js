@@ -36,34 +36,39 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className='signup-form'>
-        <ul>
-          <li><span>
-            <input
-              name='firstName'
-              placeholder='First Name'
-              type='text'
-              onChange={this.handleChange} />
-          </span></li>
-          <li><span>
-            <input
-              name='lastName'
-              placeholder='Last Name'
-              type='text'
-              onChange={this.handleChange} />
-          </span></li>
-          <li><span>
-              <label>
-                Date of Birth
-              </label>
-              <input
-                name='birthDay'
-                placeholder='Day'
-                type='number'
-                max={31}
-                min={1}
-                maxLength={2}
-                onChange={this.handleChange} />
+        <div className='form-group'>
+          <input
+            className='form-control'
+            name='firstName'
+            placeholder='First Name'
+            type='text'
+            onChange={this.handleChange} />
+        </div>
 
+        <div className='form-group'>
+          <input
+            className='form-control'
+            name='lastName'
+            placeholder='Last Name'
+            type='text'
+            onChange={this.handleChange} />        
+        </div>        
+
+        <div className='form-row'>
+          <div className='form-group col-md-4'>
+            <label>
+              Date of Birth
+            </label>
+            <input
+              className='form-control'
+              name='birthDay'
+              placeholder='Day'
+              type='number'
+              max={31}
+              min={1}
+              maxLength={2}
+                onChange={this.handleChange} />
+            <div className='form-group col-md-4'>
               <select
                 name='birthMonth'
                 onChange={this.handleChange} > 
@@ -81,7 +86,8 @@ class Form extends Component {
                 <option value='11'>November</option>
                 <option value='12'>December</option>
               </select>
-
+            </div>
+            <div className='form-group col-md-4'>
               <input
                 name='birthYear'
                 placeholder='Year'
@@ -90,30 +96,37 @@ class Form extends Component {
                 min={1900}
                 maxLength={4}
                 onChange={this.handleChange} />
-            </span></li>
-          <li><span>
-            <input
-              name='email'
-              placeholder='Email'
-              type='email'
-              onChange={this.handleChange} />
-          </span></li>
-          <li><span>
-            <input
-              name='password'
-              placeholder='Password'
-              type='password'
-              onChange={this.handleChange} />
-          </span></li>
-          <li><span>
-            <input
-              name='confirmPassword'
-              placeholder='Confirm Password'
-              type='password'
-              onChange={this.handleChange} />
-          </span></li>
-        </ul>
-        <button type='submit'>Signup</button>
+            </div>
+          </div>
+        </div>
+
+        <div className='form-group'>
+          <input
+            className='form-control'
+            name='email'
+            placeholder='Email'
+            type='email'
+            onChange={this.handleChange} />
+        </div>
+
+        <div className='form-group'>
+          <input
+            className='form-control'
+            name='password'
+            placeholder='Password'
+            type='password'
+            onChange={this.handleChange} />
+        </div>
+
+        <div className='form-group'>
+          <input
+            className='form-control'
+            name='confirmPassword'
+            placeholder='Confirm Password'
+            type='password'
+            onChange={this.handleChange} />
+        </div>
+        <button type='submit' className='btn btn-primary' >Signup</button>
       </form>
     );
   }
