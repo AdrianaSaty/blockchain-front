@@ -32,30 +32,7 @@ td {
   margin-right: auto;
 }
 
-.group {
-  position: relative;
-  margin: 30px 0;
-}
-.group ::-webkit-input-placeholder {
-  color: transparent;
-  opacity: 0;
-  transition: inherit;
-}
-.group :-moz-placeholder {
-  color: transparent;
-  opacity: 0;
-  transition: inherit;
-}
-.group ::-moz-placeholder {
-  color: transparent;
-  opacity: 0;
-  transition: inherit;
-}
-.group :-ms-input-placeholder {
-  color: transparent;
-  opacity: 0;
-  transition: inherit;
-}
+
 
 .txt-center {
   text-align: center;
