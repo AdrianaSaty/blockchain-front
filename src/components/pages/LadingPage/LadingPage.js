@@ -1,4 +1,6 @@
 import adriana from '../../../img/Adriana.jpg';
+import dan from '../../../img/Dan1.jpg';
+import fernando from '../../../img/Fernando.jpg';
 import React, { Component } from 'react';
 import('./LadingPage.css');
 class LadingPage extends Component {
@@ -48,39 +50,42 @@ class LadingPage extends Component {
                 </section>
 
                
-                <div className="txt-center" id="about-us">
+                <div className="txt-center pt-4" id="about-us">
                     <div className="landing-titles txt-center">
-                        <h2>About us</h2>
+                        <h2>
+                            <a className="title2">About us</a>
+                        </h2>
                     </div>
-                    <div className="row align-items-center justify-content-around landing-text">
+                    <div className="row align-items-center justify-content-center landing-text">
                         <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in">
-                            <img className="img-about-us" src="../../../img/Adriana.jpg" alt="about-us-img" href="" />
-                            <div className="">
+                            <img className="img-about-us" src={adriana} alt="about-us-img" href="" />
+                         
                                 <h4 className="txt-center">Adriana Saty Bertelli</h4>
                                 <p className="txt-center">
-                                    After I got my graduation in Electrical Engineering at UFPR,
-                                    I was not satisfied due to not explore my logic and creativity.
+                                    After I got my graduation in Electrical Engineering at UFPR, <br></br>
+                                    I was not satisfied due to not explore my logic and creativity. <br></br>
                                     So I decided to change my field to one of the most challenging areas to work on: IT!
                             </p>
-                            </div>
+                       
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in">
-                            <img className="img-about-us" src="../../../Fernando.jpg" alt="about-us-img" href="" />
+                            <img className="img-about-us" src={dan} alt="about-us-img" href="" />
                             <div className="">
                                 <h4 className="txt-center">Dan Yamashita</h4>
                                 <p className="txt-center">
-                                    blbalbalballbablbalbalballbablbalbalballbablbalbalballba
+                                    blbalbalballbablbalbalballbablbalbalballbablbalbalballba <br></br>
+                                    blbalbalballbablbalbalballbablbalbalballbablbalbalballba <br></br>
                                     blbalbalballba
                             </p>
                             </div>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in">
-                            <img className="img-about-us" src="../../../img/Fernando.jpg" alt="about-us-img" href="" />
+                            <img className="img-about-us" src={fernando} alt="about-us-img" href="" />
                             <div className="">
                                 <h4 className="txt-center">Fernando Yto</h4>
                                 <p className="txt-center">
-                                    I like baseball and snowboard. Currently not practicing any of it, but definitely should.
-                                    Studied Business Administration, but work experiences always pushed me towards the dev world.
+                                    I like baseball and snowboard. Currently not practicing any of it, but definitely should. <br></br>
+                                    Studied Business Administration, but work experiences always pushed me towards the dev world.<br></br>
                                     So here I am!
                             </p>
                             </div>
@@ -89,12 +94,14 @@ class LadingPage extends Component {
                 </div>
                 <div className="txt-center mt-5" id="about-project">
                     <div className="txt-center landing-titles">
-                        <h2>About this project</h2>
+                        <h2> 
+                            <a className="title2">About this project</a>
+                        </h2>
                     </div>
                     <p>
-                        This web application is our second project for Ironhack's Web Development Bootcamp.
-                        Built using NodeJs with Express framework, MongoDB as our database and Handlebars as the view engine.
-                        We also used some NPM packages to help us. Like: bcrypt, body-parser, chart.js, gulp, sass.
+                        This web application is our second project for Ironhack's Web Development Bootcamp. <br></br>
+                        Built using NodeJs with Express framework, MongoDB as our database and Handlebars as the view engine. <br></br>
+                        We also used some NPM packages to help us. Like: bcrypt, body-parser, chart.js, gulp, sass. <br></br>
                 </p>
                     <div className="d-flex row justify-content-between">
                         <div><img className="img-built-mongo" src="/img/logo-node.png" alt="express" href="" /></div>
