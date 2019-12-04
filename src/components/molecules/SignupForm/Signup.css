@@ -18,3 +18,12 @@
   vertical-align: middle;
   margin-top: 200px;
 }
+
+.recaptcha-container {
+  margin-bottom: 10px;
+  /* width: 100%; */
+}
+
+.recaptcha div {
+  margin: 0 auto;
+}
