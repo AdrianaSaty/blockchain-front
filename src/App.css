@@ -81,7 +81,7 @@ textarea:focus + label {
 }
 
 label {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   color: white;
   transition: 300ms ease all;
