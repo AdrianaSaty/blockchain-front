@@ -1,6 +1,6 @@
+import adriana from '../../../img/Adriana.jpg';
 import React, { Component } from 'react';
 import('./LadingPage.css');
-
 class LadingPage extends Component {
     constructor(props) {
         super(props);
@@ -53,32 +53,32 @@ class LadingPage extends Component {
                         <h2>About us</h2>
                     </div>
                     <div className="row align-items-center justify-content-around landing-text">
-                        <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in" className="card">
+                        <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in">
                             <img className="img-about-us" src="../../../img/Adriana.jpg" alt="about-us-img" href="" />
-                            <div className="card-body">
-                                <h4 className="card-title txt-center">Adriana Saty Bertelli</h4>
-                                <p className="card-text txt-center">
+                            <div className="">
+                                <h4 className="txt-center">Adriana Saty Bertelli</h4>
+                                <p className="txt-center">
                                     After I got my graduation in Electrical Engineering at UFPR,
                                     I was not satisfied due to not explore my logic and creativity.
                                     So I decided to change my field to one of the most challenging areas to work on: IT!
                             </p>
                             </div>
                         </div>
-                        <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in" className="card">
+                        <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in">
                             <img className="img-about-us" src="../../../Fernando.jpg" alt="about-us-img" href="" />
-                            <div className="card-body">
-                                <h4 className="card-title txt-center">Dan Yamashita</h4>
-                                <p className="card-text txt-center">
+                            <div className="">
+                                <h4 className="txt-center">Dan Yamashita</h4>
+                                <p className="txt-center">
                                     blbalbalballbablbalbalballbablbalbalballbablbalbalballba
                                     blbalbalballba
                             </p>
                             </div>
                         </div>
-                        <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in" className="card">
+                        <div data-aos="fade-up" data-aos-duration="1250" data-aos-easing="ease-in">
                             <img className="img-about-us" src="../../../img/Fernando.jpg" alt="about-us-img" href="" />
-                            <div className="card-body">
-                                <h4 className="card-title txt-center">Fernando Yto</h4>
-                                <p className="card-text txt-center">
+                            <div className="">
+                                <h4 className="txt-center">Fernando Yto</h4>
+                                <p className="txt-center">
                                     I like baseball and snowboard. Currently not practicing any of it, but definitely should.
                                     Studied Business Administration, but work experiences always pushed me towards the dev world.
                                     So here I am!
