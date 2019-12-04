@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Iceland&display=swap");
+
 /*---------- GENERAL ----------*/
 * {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: Iceland;
   background-color: #2d1063; /* 51269d */
 }
 
@@ -32,8 +34,6 @@ td {
   margin-right: auto;
 }
 
-
-
 .txt-center {
   text-align: center;
 }
@@ -52,85 +52,6 @@ td {
 
 .col-feature {
   width: 50%;
-}
-
-/*---------- HEADINGS ----------*/
-h1 {
-  text-align: center;
-  color: #f2b423;
-}
-
-h2 {
-  text-align: center;
-  color: #f2b423;
-}
-
-/*---------- INPUTS ----------*/
-.label-upside,
-input:not(:placeholder-shown) + label,
-textarea:not(:placeholder-shown) + label {
-  font-size: 15px;
-  top: -17px;
-}
-
-input:focus + label,
-textarea:focus + label {
-  font-size: 15px;
-  top: -17px;
-  color: #f2b423;
-}
-
-label {
-  position: absolute;
-  top: 0;
-  color: white;
-  transition: 300ms ease all;
-}
-
-input,
-textarea {
-  display: block;
-  border: none;
-  border-bottom: 1px solid white;
-  padding: 5px;
-  background-color: transparent;
-}
-input:not(:placeholder-shown) + label,
-textarea:not(:placeholder-shown) + label {
-  outline: none;
-}
-input:focus + label,
-textarea:focus + label {
-  outline: none;
-}
-input input[type="password"],
-textarea input[type="password"] {
-  letter-spacing: 0.3em;
-}
-
-.label-upside {
-  outline: none;
-}
-
-:focus {
-  outline: none;
-}
-
-/*------ LINE UNDER INPUTS -------*/
-.effect ~ .line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #f2b423;
-  transition: 0.4s;
-}
-
-.effect:focus ~ .line,
-.has-content.effect ~ .line {
-  width: 140px;
-  transition: 0.4s;
 }
 
 /*---------- SELECT ----------*/
@@ -186,41 +107,6 @@ td {
   border: 1px solid black;
 }
 
-
-/*------------ COLORS ------------*/
-.primary-color {
-  color: #f2b423;
-}
-
-.second-color {
-  color: white;
-}
-
-.line {
-  display: flex;
-  justify-content: space-between;
-}
-@media (max-width: 1000px) {
-  .line {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .line .col-4 {
-    max-width: 100%;
-    width: 90%;
-  }
-}
-
-/*---------- BACKGROUND ----------*/
-.bg-grey {
-  background-color: white;
-}
-
-.bg-yellow {
-  background-color: #f2b423;
-}
 
 /*-------- IMPORTS BOOTSTRAP -------*/
 /*!
