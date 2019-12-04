@@ -134,7 +134,7 @@ class Form extends Component {
               type='password'
               onChange={this.handleChange} />
           </div>
-          <div className='recaptcha-container'>
+          <div>
             <ReCAPTCHA
               className='recaptcha'
               sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
