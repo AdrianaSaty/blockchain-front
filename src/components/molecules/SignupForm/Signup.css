@@ -19,11 +19,13 @@
   margin-top: 200px;
 }
 
-.recaptcha-container {
-  margin-bottom: 10px;
-  /* width: 100%; */
-}
-
 .recaptcha div {
   margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
