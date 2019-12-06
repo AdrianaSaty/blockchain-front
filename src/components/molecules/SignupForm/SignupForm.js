@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import ('./Signup.css');
 
 class Form extends Component {
@@ -29,6 +30,10 @@ class Form extends Component {
     });
   }
 
+  onChange(value) {
+    console.log('Captcha value: ', value);
+  }
+
   handleSubmit(event) {
     event.preventDefault();
   }
@@ -36,7 +41,7 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className='signup-form d-flex justify-content-center'>
-        <div>
+        <div className='w-25'>
           <div className='form-group'>
             <input
               className='form-control'
@@ -55,11 +60,11 @@ class Form extends Component {
               onChange={this.handleChange} />        
           </div>        
 
+          <label for='birthDay' >
+            Date of Birth
+          </label>
           <div className='form-row'>
-            <div className='form-group col-md-4'>
-              <label>
-                Date of Birth
-              </label>
+            <div className='form-group col-md-2'>
               <input
                 className='form-control'
                 name='birthDay'
@@ -68,36 +73,38 @@ class Form extends Component {
                 max={31}
                 min={1}
                 maxLength={2}
-                  onChange={this.handleChange} />
-              <div className='form-group col-md-4'>
-                <select
-                  name='birthMonth'
-                  onChange={this.handleChange} > 
-                  <option defaultValue='selected'>Month</option>
-                  <option value='01'>January</option>
-                  <option value='02'>February</option>
-                  <option value='03'>March</option>
-                  <option value='04'>April</option>
-                  <option value='05'>May</option>
-                  <option value='06'>June</option>
-                  <option value='07'>July</option>
-                  <option value='08'>August</option>
-                  <option value='09'>September</option>
-                  <option value='10'>October</option>
-                  <option value='11'>November</option>
-                  <option value='12'>December</option>
-                </select>
-              </div>
-              <div className='form-group col-md-4'>
-                <input
-                  name='birthYear'
-                  placeholder='Year'
-                  type='number'
-                  max={new Date().getFullYear() - 18}
-                  min={1900}
-                  maxLength={4}
-                  onChange={this.handleChange} />
-              </div>
+                onChange={this.handleChange} />
+            </div>
+            <div className='form-group col-md-6'>
+              <select
+                className='form-control'
+                name='birthMonth'
+                onChange={this.handleChange} > 
+                <option defaultValue='selected'>Month</option>
+                <option value='01'>January</option>
+                <option value='02'>February</option>
+                <option value='03'>March</option>
+                <option value='04'>April</option>
+                <option value='05'>May</option>
+                <option value='06'>June</option>
+                <option value='07'>July</option>
+                <option value='08'>August</option>
+                <option value='09'>September</option>
+                <option value='10'>October</option>
+                <option value='11'>November</option>
+                <option value='12'>December</option>
+              </select>
+            </div>
+            <div className='form-group col-md-4'>
+              <input
+                className='form-control'
+                name='birthYear'
+                placeholder='Year'
+                type='number'
+                max={new Date().getFullYear() - 18}
+                min={1900}
+                maxLength={4}
+                onChange={this.handleChange} />
             </div>
           </div>
 
@@ -127,8 +134,14 @@ class Form extends Component {
               type='password'
               onChange={this.handleChange} />
           </div>
-          <button type='submit' className='btn btn-primary' >Signup</button>
-
+          <div>
+            <ReCAPTCHA
+              className='recaptcha'
+              sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+              onChange={this.onChange}
+            />
+            <button type='submit' className='btn btn-outline-warning btn-lg btn-block' >Signup</button>
+          </div>
         </div>
       </form>
     );
