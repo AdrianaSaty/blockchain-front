@@ -9,6 +9,7 @@
     "lodash": "^4.17.15",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-google-recaptcha": "^2.0.1",
     "react-redux": "^7.1.1",
     "react-redux-toastr": "^7.5.1",
     "react-router-dom": "^5.1.2",
