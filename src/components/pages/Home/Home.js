@@ -1,6 +1,9 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import('./Navbar.css');
-class Navbar extends Component {
+import { fetchBlocks } from "../../../service/api/FetchBlocks/fetchBlocks"
+import('./Home.css');
+
+class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -26,21 +29,26 @@ class Navbar extends Component {
         event.preventDefault();
     }
 
+    componentDidMount() {
+        const { dispatch } = this.props
+        dispatch(fetchBlocks())
+    }
+
     render() {
+        const { blocks = [] } = this.props
         console.log(this.state)
         return (
             <div>
-                <ul>
-                    <li><a className="title3 p-2" href="/logout">Logout</a></li>
-                    <li><a className="title3" href="#features">Features</a></li>
-                    <li><a className="title3" href="#about-us">About us</a></li>
-                    <li><a className="title3" href="#about-project">About this project</a></li>
-                    <li><a className="title3" href="/login">Login</a></li>
-                    <li><a className="title3" href="/signup">Sign Up</a></li>
-                </ul>
+                {blocks.loading ? "To Carregando" : (<></>)}
+                {`${blocks.data.map((block)=>{return block.hash})}`}
             </div>
+
         );
     }
 }
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+    blocks: state.blocks
+})
+
+export default connect(mapStateToProps)(Home);
