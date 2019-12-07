@@ -29,14 +29,16 @@ class Navbar extends Component {
     render() {
         console.log(this.state)
         return (
-            <div>
-                <ul>
-                    <li><a className="title3 p-2" href="/logout">Logout</a></li>
-                    <li><a className="title3" href="#features">Features</a></li>
-                    <li><a className="title3" href="#about-us">About us</a></li>
-                    <li><a className="title3" href="#about-project">About this project</a></li>
+            <div className="d-flex justify-content-between">
+                    <ul>
+                        {/* <li><a className="title3" href="#features">Features</a></li>
+                        <li><a className="title3" href="#about-us">About us</a></li>
+                        <li><a className="title3" href="#about-project">About this project</a></li> */}
+                    </ul>
+                <ul className="">
                     <li><a className="title3" href="/login">Login</a></li>
                     <li><a className="title3" href="/signup">Sign Up</a></li>
+                    <li><a className="title3 p-2" href="/logout">Logout</a></li>
                 </ul>
             </div>
         );

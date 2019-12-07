@@ -3,7 +3,8 @@
 /*---------- GENERAL ----------*/
 * {
   font-family: Iceland;
-  background-color: #2d1063; /* 51269d */
+  /* background-color: #2d1063; 51269d */
+
 }
 
 *,
@@ -16,14 +17,8 @@
 body {
   font-size: 16px;
   margin: 40px 0 0 0;
-}
+  background-color: #2d1063; /* 51269d */
 
-ul {
-  display: flex;
-  list-style-type: none;
-  font-size: 20px;
-  justify-content: flex-end;
-  margin: 0px;
 }
 
 td {
@@ -38,20 +33,14 @@ td {
   text-align: center;
 }
 
-.txt-right {
-  text-align: right;
+
+/*----------  TYPOGRAPHY ------------*/
+.txt-2 {
+  font-size: 30px;
 }
 
-.div-center {
-  margin: auto;
-}
-
-.float-right {
-  float: right;
-}
-
-.col-feature {
-  width: 50%;
+.txt-3 {
+  font-size: 17px;
 }
 
 /*----------  NEON TITLES ------------*/
