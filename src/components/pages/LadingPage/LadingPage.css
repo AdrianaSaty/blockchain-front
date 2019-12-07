@@ -1,7 +1,8 @@
 
-.landing-banner {
+section {
   height: 100vh;
   width: 100%;
+  background-color: #2d1063;
 }
 
 .landing-banner .title {
@@ -39,8 +40,6 @@
 
 .landing-features {
   background-image: url("../../../img/background-funny-text.png");
-  height: 100vh;
-  width: 100%;
   background-position: top center;
   background-color: white;
   background-size: cover;
@@ -54,6 +53,19 @@
   right: -70px;
 }
 
+.lading-about-project {
+  background-color: white;
+}
+
+.lading-about-project a{
+  background-color: white;
+}
+
+.lading-about-project p{
+  color: #2d1063;
+  font-size: 25px;
+}
+
 .landing-features p .second {
   font-size: 60px;
   position: relative;
@@ -62,7 +74,9 @@
 }
 
 .landing-container {
-  position: relative;
+  width: 300px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .landing {
@@ -89,10 +103,6 @@
 
 .landing-titles {
   font-size: 3vh;
-}
-
-.landing-text {
-  font-size: 2vh;
 }
 
 body {

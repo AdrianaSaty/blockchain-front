@@ -1,0 +1,14 @@
+body {
+    background-color: #2d1063;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 20px;
+  margin: 0px;
+}
+
+li {
+    padding: 0 10px;
+}

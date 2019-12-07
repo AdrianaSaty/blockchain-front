@@ -16,8 +16,8 @@ function App() {
       store={store}
       >
       <Navbar />
+      
       <Switch>
-
         <Route exact path='/'>
           <LadingPage />          
         </Route>
