@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import SignupForm from './components/molecules/SignupForm/SignupForm';
+import Signup from './components/pages/Signup/Signup';
+import Login from './components/pages/Login/Login';
 import LadingPage from './components/pages/LadingPage/LadingPage';
 import Navbar from './components/organisms/Navbar/Navbar';
 import Home from './components/pages/Home/Home';
@@ -15,15 +16,19 @@ function App() {
       <Provider
       store={store}
       >
-      <Navbar />
       
       <Switch>
         <Route exact path='/'>
+          <Navbar />
           <LadingPage />          
         </Route>
         
         <Route exact path='/signup'>
-          <SignupForm />
+          <Signup />
+        </Route>
+
+        <Route exact path='/login'>
+          <Login />
         </Route>
 
         <Route exact path='/home'>

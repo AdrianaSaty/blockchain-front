@@ -1,0 +1,23 @@
+.login-form button {
+  border-radius: 25px;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox label {
+  max-width: 100%;
+  font-size: larger;
+}
+
+input {
+  margin-right: 10px;
+}

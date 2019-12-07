@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import ('./Signup.css');
 
-class Form extends Component {
+class SignupForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -140,7 +140,7 @@ class Form extends Component {
               sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
               onChange={this.onChange}
             />
-            <button type='submit' className='btn btn-outline-warning btn-lg btn-block' >Signup</button>
+            <button type='submit' className='btn btn-warning btn-lg btn-block' ><strong className='text-dark'>Signup</strong></button>
           </div>
         </div>
       </form>
@@ -148,4 +148,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default SignupForm;

@@ -1,0 +1,6 @@
+.blotting-logo {
+  background: url('/public/images/blotting-logo.png') transparent no-repeat center;  
+  background-size: contain;
+  display: block;
+  margin: 0 auto;
+}
