@@ -69,39 +69,3 @@ select {
   height: 5rem;
   filter: grayscale(80%);
 }
-
-/*---------- TABLE ----------*/
-thead {
-  background-color: white;
-  color: #f2b423;
-}
-thead th {
-  color: #f2b423;
-  font-weight: normal;
-}
-
-table,
-th,
-td {
-  border: 1px solid white;
-}
-
-table {
-  width: 260px;
-}
-
-td,
-tr {
-  padding: 1px 6px;
-  text-align: center;
-}
-
-tfoot {
-  color: #f2b423;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
-}
