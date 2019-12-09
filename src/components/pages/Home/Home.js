@@ -40,7 +40,68 @@ class Home extends Component {
         return (
             <div>
                 {blocks.loading ? "To Carregando" : (<></>)}
-                {`${blocks.data.map((block)=>{return block.hash})}`}
+                {`${blocks.data.map((block) => { return block.hash })}`}
+
+                <div className="">
+                    <div className="container ">
+                        <div className="row line">
+                            <div className="col-4 p-0 ">
+                                <div className="">
+                                    <h2 className="mt-5">
+                                        Last Games:
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div className="col-4 p-0">
+                                <div>
+                                    <h2 className="mt-5 txt-center">
+                                        Balance:
+                                    </h2>
+                                    <h4 className="txt-center">
+                                        $1000
+                                    </h4>
+                                    <button className='mt-5 btn btn-outline-warning btn-lg btn-block'>
+                                        New Bett:
+                                    </button>
+                                    <h2 className="mt-5 txt-center">
+                                        Your Betts:
+                                    </h2>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th><h4>Team 1</h4></th>
+                                                <th><h4>x</h4></th>
+                                                <th><h4>Team 2</h4></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <th><h5>$100</h5></th>
+                                            <th><h5></h5></th>
+                                            <th><h5>$300</h5></th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div>
+
+                            <div className="col-4 p-0">
+                                <div className="">
+                                    <h2 className="mt-5">
+                                        Next Games:
+                                     </h2>
+                                </div>
+
+                                <div className="d-flex justify-content-center mt-1">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
 
         );
