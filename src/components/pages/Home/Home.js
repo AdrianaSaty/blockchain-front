@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import api from '../../../api/api';
 import { fetchBlocks } from "../../../service/api/FetchBlocks/fetchBlocks"
 import('./Home.css');
 
