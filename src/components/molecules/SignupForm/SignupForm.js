@@ -32,7 +32,7 @@ class SignupForm extends Component {
   }
 
   handleSubmit = async(event) => {
-    const { firstName, lastName, birthDay, birthMonth, birthYear, email, password, confirmPassword, submitMessage } = this.state;
+    const { birthYear, password, confirmPassword } = this.state;
     event.preventDefault();
 
     if (password !== confirmPassword) {

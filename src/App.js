@@ -56,10 +56,10 @@ class App extends Component {
             </Route>
 
             {/* Private Routes */}
-            <PrivateRoute exact path='/home' component={Home} isUserAuthenticated={isUserAuthenticated} />
-            {/* <Route exact path='/home'>
+            {/* <PrivateRoute exact path='/home' component={Home} isUserAuthenticated={isUserAuthenticated} /> */}
+            <Route exact path='/home'>
               <Home />
-            </Route> */}
+            </Route>
     
           </Switch>
         </Provider>

@@ -1,37 +1,3 @@
 h2 {
     color: #f2b423;
 }
-
-
-/*---------- TABLE ----------*/
-thead {
-    /* background-color: white; */
-    color: #f2b423;
-  }
-  thead th {
-    /* color: #f2b423; */
-    font-weight: normal;
-  }
-  
-  table,
-  th,
-  td {
-    /* border: 1px solid white; */
-  }
-  
-  table {
-    width: 100%;
-  }
-  
-  td,
-  tr {
-    padding: 1px 6px;
-    text-align: center;
-  }
-
-  
-  table,
-  th,
-  td {
-    /* border: 1px solid black; */
-  }
