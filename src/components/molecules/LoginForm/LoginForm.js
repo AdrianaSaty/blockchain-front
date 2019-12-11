@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import api from '../../../api/api';
 import ('./LoginForm.css');
 
@@ -14,11 +13,6 @@ class LoginForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  renderRedirect = () => {
-    console.log('chamou redirect porra')
-    return <Redirect to='/home' />
   }
 
   handleChange(event) {
@@ -49,11 +43,9 @@ class LoginForm extends Component {
     if (response.status === 200) {
       const token = JSON.stringify(response.data);
       const { authenticateUser, history } = this.props;
-      console.log(token)
 
       localStorage.setItem('loggedUser', token);
       authenticateUser();
-      console.log(history)
       history.push('/home');
     }
   }
