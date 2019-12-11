@@ -14,6 +14,7 @@ class Login extends Component {
 
 
   render() {
+    const { authenticateUser, history } = this.props;
     return (
       <div className='container-fluid' >
         <FormHeader />
@@ -24,7 +25,7 @@ class Login extends Component {
             </h2>
           </div>
           
-          <LoginForm />
+          <LoginForm authenticateUser={authenticateUser} history={history} />
 
           <div className='divider col-xs-12'></div>
 

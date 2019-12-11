@@ -51,16 +51,10 @@ class App extends Component {
               <Signup />
             </Route>
     
-            <Route exact path='/login'>
-              <Login />
-            </Route>
+            <Route exact path='/login' render={(props) => <Login {...props} authenticateUser={this.authenticateUser} />} />
 
             {/* Private Routes */}
-            {/* <PrivateRoute exact path='/home' component={Home} isUserAuthenticated={isUserAuthenticated} /> */}
-            <Route exact path='/home'>
-              <Home />
-            </Route>
-    
+            <PrivateRoute exact path='/home' component={Home} isAuth={isUserAuthenticated} />
           </Switch>
         </Provider>
       </div>

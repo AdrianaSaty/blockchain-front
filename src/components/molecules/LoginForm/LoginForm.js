@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import api from '../../../api/api';
 import ('./LoginForm.css');
 
 class LoginForm extends Component {
@@ -7,39 +9,66 @@ class LoginForm extends Component {
     this.state = {
       email: '',
       password: '',
+      submitMessage: '',
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  renderRedirect = () => {
+    console.log('chamou redirect porra')
+    return <Redirect to='/home' />
+  }
+
   handleChange(event) {
-    const target = event.target;
-    const name = target.name;
-    const value = target.value;
+    const { name, value } = event.target;
 
     this.setState({
       [name]: value
     });
   }
 
-  onChange(value) {
-    console.log('Captcha value: ', value);
-  }
-
-  handleSubmit(event) {
+  handleSubmit = async (event) => {
+    const { email, password } = this.state; 
     event.preventDefault();
+
+    if (!email || !password) {
+      this.setState({
+        submitMessage: 'Insert email and password'
+      })
+      return;
+    }
+
+    const response = await api({
+      url: `${process.env.REACT_APP_BLOCKCHAIN_LOGIN_API}/users/login`,
+      method: 'POST',
+      data: this.state
+    });
+
+    if (response.status === 200) {
+      const token = JSON.stringify(response.data);
+      const { authenticateUser, history } = this.props;
+      console.log(token)
+
+      localStorage.setItem('loggedUser', token);
+      authenticateUser();
+      console.log(history)
+      history.push('/home');
+    }
   }
 
   render() {
+    const { email, password } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} className='login-form d-flex justify-content-center'>
+      <form onSubmit={(event) => this.handleSubmit(event)} className='login-form d-flex justify-content-center'>
         <div className='w-100'>
           <div className='form-group'>
             <input
               className='form-control'
               name='email'
               placeholder='Email'
+              value={email}
               type='email'
               onChange={this.handleChange} />
           </div>
@@ -49,6 +78,7 @@ class LoginForm extends Component {
               className='form-control'
               name='password'
               placeholder='Password'
+              value={password}
               type='password'
               onChange={this.handleChange} />
           </div>
