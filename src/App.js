@@ -55,9 +55,6 @@ class App extends Component {
 
             {/* Private Routes */}
             <PrivateRoute exact path='/home' component={Home} isAuth={isUserAuthenticated} />
-            {/* <Route exact path='/home'>
-              <Home />
-            </Route> */}
     
           </Switch>
         </Provider>
