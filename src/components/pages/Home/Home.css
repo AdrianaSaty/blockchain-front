@@ -14,7 +14,6 @@ h2 {
 }
 
 .shadow-gradient::after {
-
     content: '';
     width: 100%;
     height: 30vh;
