@@ -132,6 +132,15 @@ a {
   animation: neon1 1.5s ease-in-out infinite alternate;
 }
 
+h3,
+a {
+  text-align: center;
+  color: #fff;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
 h1,
 a:hover {
   color: #f2b423;
@@ -146,6 +155,12 @@ a {
   color: white; /*  #ff8400; amarelo claro*/
 }
 
+h3,
+a {
+  font-size: 7,5vh;
+  color: white; /*  #ff8400; amarelo claro*/
+}
+
 
 
 h1,
@@ -154,12 +169,6 @@ a:hover {
   -moz-animation: neon1 1.5s ease-in-out infinite alternate;
   animation: neon1 1.5s ease-in-out infinite alternate;
 }
-
-/* h1,
-a:hover {
-  color: #f2b423;
-} */
-/*glow for webkit*/
 
 @-webkit-keyframes neon1 {
   from {

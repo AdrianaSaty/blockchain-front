@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 import { fetchBlocks } from "../../../service/api/FetchBlocks/fetchBlocks";
 import { fetchFootbalMatches } from '../../../service/api/FetchFootbalMatches/fetchFootbalMatches';
 import GameTable from '../../molecules/GameTable/GameTable';
+import Modal from '../../organisms/Modal/Modal';
+import YourBetTable from '../../molecules/YourBetTable/YourBetTable';
 import('./Home.css');
+
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            show: true
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,6 +32,18 @@ class Home extends Component {
         event.preventDefault();
     }
 
+    showModal = () => {
+        // this.setState({ show: true });
+        this.setState({
+            ...this.state,
+            show: !this.state.show  
+        })
+      };
+
+    hideModal = () => {
+        // this.setState({ show: false });
+    };
+
     componentDidMount() {
         const { dispatch } = this.props
         dispatch(fetchBlocks())
@@ -46,15 +61,13 @@ class Home extends Component {
             });
 
             newMatchesScheduled = newMatches.filter(function (elem, i, array) {
-                return elem.status === "SCHEDULED";
+                return elem.status === "SCHEDULED" || elem.status === "IN_PLAY";
             });
         }
 
 
 
-        // console.log(this.state)
         console.log(newMatches)
-        // console.log(blocks.loading)
         return (
             <div>
                 {blocks.loading ? "To Carregando block" : (<></>)}
@@ -62,19 +75,24 @@ class Home extends Component {
 
                 {matches.loading ? "To Carregando matches" : (<></>)}
 
-                {/* {newMatches ? newMatches.map((match) => match.group) : null} */}
+                {/* {newMatches ? newMatches.map((match) => match.awayTeam.name) : null} */}
+                {/* {newMatchesScheduled ? newMatchesScheduled.map((match) => match.awayTeam.name) : null} */}
 
 
                 <div className="">
                     <div className="row line">
                         <div className="col-5 p-0 ">
-                            <div className="">
+                            <div className="ml-5 mr-5">
                                 <h2 className="mt-5 txt-center">
                                     Last Games:
-                                    </h2>
+                                </h2>
+                                <div className="shadow-gradient">
+                                    <div className="div-scroll">
+                                        {newMatchesFinished ? newMatchesFinished.map((match) => <GameTable team1={match.awayTeam.name} team2={match.homeTeam.name} />) : null}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                         <div className="col-2 p-0">
                             <div>
                                 <h2 className="mt-5 txt-center">
@@ -83,23 +101,31 @@ class Home extends Component {
                                 <h4 className="txt-center">
                                     $1000
                                     </h4>
-                                <button className='mt-5 btn btn-outline-warning btn-lg btn-block'>
-                                    New Bett:
-                                    </button>
+                                    <input 
+                                        type="button" className='mt-5 btn btn-outline-warning btn-lg btn-block'
+                                        onClick={this.showModal}
+                                        value="New Bet:" />
+
+                                    <Modal onClose={this.showModal} show={this.state.show}>
+                                        <h3>Your Best Bet:</h3>
+                                    </Modal>
                                 <h2 className="mt-5 txt-center">
-                                    Your Betts:
+                                    Your Bets:
                                     </h2>
-                                <GameTable team1="Team 1" team2="Team 2" value1="value1" value2="value1" />
+                                <YourBetTable team1="Team 1" team2="Team 2" value1="value1" value2="value1" />
                             </div>
                         </div>
 
                         <div className="col-5 p-0">
-                            <div className="">
+                            <div className="mr-5 ml-5">
                                 <h2 className="mt-5 txt-center">
                                     Next Games:
-                                     </h2>
-                                {newMatchesScheduled ? newMatchesScheduled.map((match) => <GameTable team1={match.awayTeam.name} team2={match.homeTeam.name} />) : null}
-
+                                </h2>
+                                <div className="shadow-gradient">
+                                    <div className="div-scroll">
+                                        {newMatchesScheduled ? newMatchesScheduled.map((match) => <GameTable team1={match.awayTeam.name} team2={match.homeTeam.name} />) : null}
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="d-flex justify-content-center mt-1">
@@ -113,6 +139,8 @@ class Home extends Component {
         );
     }
 }
+
+
 
 const mapStateToProps = (state) => ({
     matches: state.matches,

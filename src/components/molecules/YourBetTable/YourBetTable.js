@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import('./GameTable.css');
+import('./YourBetTable.css');
 
-class GameTable extends Component {
+class YourBetTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,4 +38,4 @@ class GameTable extends Component {
   }
 }
 
-export default GameTable;
+export default YourBetTable;

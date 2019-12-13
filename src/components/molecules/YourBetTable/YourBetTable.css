@@ -7,24 +7,10 @@ thead {
 thead th {
   /* color: #f2b423; */
   font-weight: normal;
-  width:42vh;
-}
-
-.thMiddle {
-  width: 5vh;
-}
-
-table,
-th,
-td {
-  /* border: 1px solid black; */
-  text-align: center;
-  width: 100px;
 }
 
 table {
-  width: 90vh;
-  margin: 0 auto;
+  width: 80%;
 }
 
 td,
@@ -32,5 +18,3 @@ tr {
   padding: 1px 6px;
   text-align: center;
 }
-
-

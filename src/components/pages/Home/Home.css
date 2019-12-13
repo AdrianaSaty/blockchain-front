@@ -1,3 +1,33 @@
 h2 {
     color: #f2b423;
 }
+
+.div-scroll {
+    height: 80vh;
+    overflow: auto;
+    z-index: 5;
+}
+
+.shadow-gradient {
+    padding: 0 20px;
+    position: relative;
+}
+
+.shadow-gradient::after {
+
+    content: '';
+    width: 100%;
+    height: 30vh;
+    position: absolute;
+    overflow: auto;
+    z-index: 1;
+    bottom: 0px;
+    left: 0;
+    background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, 0.219), transparent);
+    background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, 0.219), transparent);
+    background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.219), transparent);
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.219), transparent);  
+}
+/* .div-scroll::after {
+    
+} */
