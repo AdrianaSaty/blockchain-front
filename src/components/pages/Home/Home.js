@@ -73,13 +73,6 @@ class Home extends Component {
             <div>
                 {/* {blocks.loading ? "To Carregando block" : (<></>)}
                 {blocks.data.map((block) => block.hash)} */}
-
-
-                {/* {newMatches ? newMatches.map((match) => match.awayTeam.name) : null} */}
-                {/* {newMatchesScheduled ? newMatchesScheduled.map((match) => match.awayTeam.name) : null} */}
-
-
-
                 <div className="">
                     <div className="row line">
                         <div className="col-5 p-0 ">
