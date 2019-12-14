@@ -74,6 +74,9 @@ class LoginForm extends Component {
               type='password'
               onChange={this.handleChange} />
           </div>
+          <div>
+            <h4 className='text-center' >{this.state.submitMessage}</h4>
+          </div>
 
           <div className='row'>
             <div className='col-sm-6 checkbox'>

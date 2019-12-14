@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { fetchBlocks } from "../../../service/api/FetchBlocks/fetchBlocks";
 import { fetchFootbalMatches } from '../../../service/api/FetchFootbalMatches/fetchFootbalMatches';
 import GameTable from '../../molecules/GameTable/GameTable';
 import Modal from '../../organisms/Modal/Modal';
 import YourBetTable from '../../molecules/YourBetTable/YourBetTable';
 import Loading from '../../molecules/Loading/Loading';
+import Navbar from '../../organisms/Navbar/Navbar';
 import('./Home.css');
 
 
@@ -47,12 +47,11 @@ class Home extends Component {
 
     componentDidMount() {
         const { dispatch } = this.props
-        dispatch(fetchBlocks())
         dispatch(fetchFootbalMatches())
     }
 
     render() {
-        const { blocks, matches } = this.props;
+        const { matches } = this.props;
         const newMatches = matches.data.matches;
         let newMatchesFinished = null;
         let newMatchesScheduled = null;
@@ -73,6 +72,7 @@ class Home extends Component {
             <div>
                 {/* {blocks.loading ? "To Carregando block" : (<></>)}
                 {blocks.data.map((block) => block.hash)} */}
+                <Navbar route='home' logout={this.props.logout} />
                 <div className="">
                     <div className="row line">
                         <div className="col-5 p-0 ">
