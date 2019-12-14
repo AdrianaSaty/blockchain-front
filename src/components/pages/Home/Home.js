@@ -5,6 +5,7 @@ import { fetchFootbalMatches } from '../../../service/api/FetchFootbalMatches/fe
 import GameTable from '../../molecules/GameTable/GameTable';
 import Modal from '../../organisms/Modal/Modal';
 import YourBetTable from '../../molecules/YourBetTable/YourBetTable';
+import Loading from '../../molecules/Loading/Loading';
 import('./Home.css');
 
 
@@ -70,13 +71,13 @@ class Home extends Component {
         console.log(newMatches)
         return (
             <div>
-                {blocks.loading ? "To Carregando block" : (<></>)}
-                {blocks.data.map((block) => block.hash)}
+                {/* {blocks.loading ? "To Carregando block" : (<></>)}
+                {blocks.data.map((block) => block.hash)} */}
 
-                {matches.loading ? "To Carregando matches" : (<></>)}
 
                 {/* {newMatches ? newMatches.map((match) => match.awayTeam.name) : null} */}
                 {/* {newMatchesScheduled ? newMatchesScheduled.map((match) => match.awayTeam.name) : null} */}
+
 
 
                 <div className="">
@@ -88,6 +89,7 @@ class Home extends Component {
                                 </h2>
                                 <div className="shadow-gradient">
                                     <div className="div-scroll">
+                                        {newMatches ? (<></>) : <Loading />}
                                         {newMatchesFinished ? newMatchesFinished.map((match) => <GameTable team1={match.awayTeam.name} team2={match.homeTeam.name} />) : null}
                                     </div>
                                 </div>
@@ -123,6 +125,7 @@ class Home extends Component {
                                 </h2>
                                 <div className="shadow-gradient">
                                     <div className="div-scroll">
+                                        {newMatches ? (<></>) : <Loading />}
                                         {newMatchesScheduled ? newMatchesScheduled.map((match) => <GameTable team1={match.awayTeam.name} team2={match.homeTeam.name} />) : null}
                                     </div>
                                 </div>
