@@ -1,0 +1,45 @@
+.backdropStyle {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 50px;
+  z-index: 1;
+}
+
+.modalStyle {
+  background-color: #2d1063;
+  border: 2px  solid #f2b423;
+  border-radius: 5;
+  max-width: 500px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+footerStype {
+  /* position: absolute;
+  bottom: 20px; */
+}
+
+.close {
+  color: #f2b423;
+  float: right;
+  font-size: 50px;
+  top: -40px;
+  left: 106%;
+  position: absolute;
+  opacity: 1;
+  transition: .4s;
+}
+
+.close:hover,
+.close:focus {
+  color: #2d1063;
+  text-decoration: none;
+  cursor: pointer;
+}

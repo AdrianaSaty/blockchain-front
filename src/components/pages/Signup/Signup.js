@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import SignupForm from '../../molecules/SignupForm/SignupForm';
-import FormHeader from '../../molecules/FormHeader/FormHeader';
 
 
 class Signup extends Component {

@@ -8,7 +8,6 @@ import Navbar from './components/organisms/Navbar/Navbar';
 import Home from './components/pages/Home/Home';
 import PrivateRoute from './router/privateRoute';
 import { Provider } from 'react-redux';
-
 import store from "./store"
 
 class App extends Component {
@@ -37,13 +36,13 @@ class App extends Component {
 
     return (
       <div>
+        <Navbar isUserAuthenticated={isUserAuthenticated} />
 
         <Provider store={store}>
           <Switch>
             
             {/* Public Routes */}
             <Route exact path='/'>
-              <Navbar isUserAuthenticated={isUserAuthenticated} />
               <LadingPage />          
             </Route>
             
@@ -52,7 +51,7 @@ class App extends Component {
             </Route>
     
             <Route exact path='/login' render={(props) => <Login {...props} authenticateUser={this.authenticateUser} />} />
-
+        
             {/* Private Routes */}
             <PrivateRoute exact path='/home' component={Home} isAuth={isUserAuthenticated} />
     
