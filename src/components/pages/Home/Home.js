@@ -102,8 +102,8 @@ class Home extends Component {
                                         value="New Bet:" />
 
                                     <Modal onClose={this.showModal} show={this.state.show}>
-                                        <h3>Your Best Bet:</h3>
                                     </Modal>
+
                                 <h2 className="mt-5 txt-center">
                                     Your Bets:
                                     </h2>
