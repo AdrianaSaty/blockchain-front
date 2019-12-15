@@ -6,6 +6,7 @@ import GameTable from '../../molecules/GameTable/GameTable';
 import Modal from '../../organisms/Modal/Modal';
 import YourBetTable from '../../molecules/YourBetTable/YourBetTable';
 import Loading from '../../molecules/Loading/Loading';
+import Barclays from '../../../img/barclays.png'
 import('./Home.css');
 
 
@@ -90,7 +91,8 @@ class Home extends Component {
                         </div>
                         <div className="col-2 p-0">
                             <div>
-                                <h2 className="mt-5 txt-center">
+                                
+                                <h2 className="txt-center mt-5">
                                     Balance:
                                     </h2>
                                 <h4 className="txt-center">
@@ -108,6 +110,8 @@ class Home extends Component {
                                     Your Bets:
                                     </h2>
                                 <YourBetTable team1="Team 1" team2="Team 2" value1="value1" value2="value1" />
+                                <div className="mt-5"><img className="center d-inline" src={Barclays} alt="express" href="" /></div>
+
                             </div>
                         </div>
 
