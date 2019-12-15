@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { fetchBlocks } from "../../../service/api/FetchBlocks/fetchBlocks";
-import { fetchFootbalMatches } from '../../../service/api/FetchFootbalMatches/fetchFootbalMatches';
 import GameTable from '../../molecules/GameTable/GameTable';
 import Modal from '../../organisms/Modal/Modal';
 import YourBetTable from '../../molecules/YourBetTable/YourBetTable';
 import Loading from '../../molecules/Loading/Loading';
+import Navbar from '../../organisms/Navbar/Navbar';
+import { getMatches } from '../../../service/football-api';
 import('./Home.css');
 
 
@@ -13,7 +13,9 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: true
+            show: true,
+            currentMatchday: 17,
+            isLoaded: false,
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,37 +47,44 @@ class Home extends Component {
         // this.setState({ show: false });
     };
 
-    componentDidMount() {
-        const { dispatch } = this.props
-        dispatch(fetchBlocks())
-        dispatch(fetchFootbalMatches())
+    async componentDidMount() {
+        // const { dispatch } = this.props
+        // dispatch(fetchFootbalMatches())
+        // let result = await currentMatchday();
+        let currentMatches = await getMatches(this.state.currentMatchday, localStorage.loggedUser);
+        console.log(currentMatches);
+        this.setState({
+            isLoaded: true,
+        })
     }
 
     render() {
-        const { blocks, matches } = this.props;
-        const newMatches = matches.data.matches;
-        let newMatchesFinished = null;
-        let newMatchesScheduled = null;
-        if (newMatches) {
-            newMatchesFinished = newMatches.filter(function (elem, i, array) {
-                return elem.status === "FINISHED";
-            });
+        // const { matches } = this.props;
+        const { isLoaded } = this.state;
+        // const newMatches = matches.data.matches;
+        // let newMatchesFinished = null;
+        // let newMatchesScheduled = null;
+        // if (newMatches) {
+        //     newMatchesFinished = newMatches.filter(function (elem, i, array) {
+        //         return elem.status === "FINISHED";
+        //     });
 
-            newMatchesScheduled = newMatches.filter(function (elem, i, array) {
-                return elem.status === "SCHEDULED" || elem.status === "IN_PLAY";
-            });
-        }
+        //     newMatchesScheduled = newMatches.filter(function (elem, i, array) {
+        //         return elem.status === "SCHEDULED" || elem.status === "IN_PLAY";
+        //     });
+        // }
 
 
 
-        console.log(newMatches)
-        return (
+        // console.log(newMatches)
+        return isLoaded && (
             <div>
                 {/* {blocks.loading ? "To Carregando block" : (<></>)}
                 {blocks.data.map((block) => block.hash)} */}
+                <Navbar route='home' logout={this.props.logout} />
                 <div className="">
                     <div className="row line">
-                        <div className="col-5 p-0 ">
+                        {/* <div className="col-5 p-0 ">
                             <div className="ml-5 mr-5">
                                 <h2 className="mt-5 txt-center">
                                     Last Games:
@@ -87,8 +96,8 @@ class Home extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-2 p-0">
+                        </div> */}
+                        {/* <div className="col-2 p-0">
                             <div>
                                 <h2 className="mt-5 txt-center">
                                     Balance:
@@ -109,17 +118,17 @@ class Home extends Component {
                                     </h2>
                                 <YourBetTable team1="Team 1" team2="Team 2" value1="value1" value2="value1" />
                             </div>
-                        </div>
+                        </div> */}
 
-                        <div className="col-5 p-0">
+                        <div className="col p-0">
                             <div className="mr-5 ml-5">
                                 <h2 className="mt-5 txt-center">
                                     Next Games:
                                 </h2>
                                 <div className="shadow-gradient">
                                     <div className="div-scroll">
-                                        {newMatches ? (<></>) : <Loading />}
-                                        {newMatchesScheduled ? newMatchesScheduled.map((match) => <GameTable team1={match.awayTeam.name} team2={match.homeTeam.name} />) : null}
+                                        {/* {newMatches ? (<></>) : <Loading />}
+                                        {newMatchesScheduled ? newMatchesScheduled.map((match) => <GameTable team1={match.awayTeam.name} team2={match.homeTeam.name} />) : null} */}
                                     </div>
                                 </div>
                             </div>

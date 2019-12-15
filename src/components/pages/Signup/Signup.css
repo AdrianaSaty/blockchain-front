@@ -1,0 +1,15 @@
+.content {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.divider {
+  border-top: 1px solid white;
+  display: block;
+  line-height: 1px;
+  margin: 15px 0;
+  position: relative;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 10px;
+}

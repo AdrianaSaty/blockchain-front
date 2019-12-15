@@ -3,8 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Signup from './components/pages/Signup/Signup';
 import Login from './components/pages/Login/Login';
-import LadingPage from './components/pages/LadingPage/LadingPage';
-import Navbar from './components/organisms/Navbar/Navbar';
+import LandingPage from './components/pages/LandingPage/LandingPage';
 import Home from './components/pages/Home/Home';
 import PrivateRoute from './router/privateRoute';
 import { Provider } from 'react-redux';
@@ -28,7 +27,7 @@ class App extends Component {
 
   logoutUser = () => {
     localStorage.removeItem('loggedUser');
-    this.setState({ isUserAuthenticated: false })
+    this.setState({ isUserAuthenticated: false });
   }
 
   render() {
@@ -36,24 +35,23 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar isUserAuthenticated={isUserAuthenticated} />
 
         <Provider store={store}>
           <Switch>
             
             {/* Public Routes */}
             <Route exact path='/'>
-              <LadingPage />          
+              <LandingPage route='landing' />          
             </Route>
             
             <Route exact path='/signup'>
               <Signup />
             </Route>
     
-            <Route exact path='/login' render={(props) => <Login {...props} authenticateUser={this.authenticateUser} />} />
+            <Route exact path='/login' render={(props) => <Login {...props} isUserAuthenticated={this.state.isUserAuthenticated} authenticateUser={this.authenticateUser} />} />
         
             {/* Private Routes */}
-            <PrivateRoute exact path='/home' component={Home} isAuth={isUserAuthenticated} />
+            <PrivateRoute exact path='/home' component={Home} isAuth={isUserAuthenticated} route='home' logout={this.logoutUser} />
     
           </Switch>
         </Provider>

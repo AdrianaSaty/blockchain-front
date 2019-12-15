@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import('./Navbar.css');
-const Navbar = ({ isUserAuthenticated }) => {
+const Navbar = ({ route, logout }) => {
+    const onClickFuncs = (event) => {
+        logout();
+        event.preventDefault();
+    }
     return (
         <div className="d-flex justify-content-end">
-            {isUserAuthenticated ? (
+            {route === 'home' ? (
                 <ul className="">
-                    <li><a className="title3 p-2" href="/logout">Logout</a></li>
+                    <li><a className="title3 p-2" onClick={(event) => onClickFuncs(event)} href='#' >Logout</a></li>
                 </ul>
                 ) : (
                 <ul className="">

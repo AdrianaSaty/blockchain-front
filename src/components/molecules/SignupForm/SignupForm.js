@@ -90,7 +90,7 @@ class SignupForm extends Component {
     const { firstName, lastName, birthDay, birthMonth, birthYear, email, password, confirmPassword, submitMessage } = this.state;
     return (
       <form onSubmit={(event) => this.handleSubmit(event)} className='signup-form d-flex justify-content-center'>
-        <div className='w-25'>
+        <div className='w-100'>
           <div className='form-group'>
             <input
               className='form-control'
