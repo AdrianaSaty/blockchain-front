@@ -17,10 +17,10 @@ const LandingPage = (props) => {
                 <div className="d-flex flex-column">
                     <div>
                         <h1>
-                            <a className="title first-title">Blotting</a>
+                            <a className="title first-title" href="/">Blotting</a>
                         </h1>
                         <h1 className="title second-title">
-                            <a>Blockchain <br></br> + Betting</a>
+                            <a href="/">Blockchain <br></br> + Betting</a>
                         </h1>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ const LandingPage = (props) => {
                 <div className="txt-center pt-5" id="about-us">
                     <div className="landing-titles txt-center">
                         <h2>
-                            <a className="title2">About us</a>
+                            <a className="title2" href="/">About us</a>
                         </h2>
                     </div>
                     <div className="row align-items-center justify-content-around ml-5 mr-5 pl-5 pr-5">
@@ -76,7 +76,7 @@ const LandingPage = (props) => {
                 <div className="txt-center">
                     <div className="txt-center landing-titles mt-5 mb-3">
                         <h2>
-                            <a className="title2">About this project</a>
+                            <a className="title2" href="/">About this project</a>
                         </h2>
                     </div>
                     <p>

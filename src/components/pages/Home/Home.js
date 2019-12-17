@@ -1,10 +1,7 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import GameTable from '../../organisms/GameTable/GameTable';
-import Modal from '../../organisms/Modal/Modal';
-import YourBetTable from '../../molecules/YourBetTable/YourBetTable';
-import Loading from '../../molecules/Loading/Loading';
-import Barclays from '../../../img/barclays.png'
+// import Loading from '../../molecules/Loading/Loading';
 import Navbar from '../../organisms/Navbar/Navbar';
 import { getMatches } from '../../../service/football-api';
 import('./Home.css');
@@ -39,17 +36,7 @@ class Home extends Component {
         event.preventDefault();
     }
 
-    showModal = () => {
-        // this.setState({ show: true });
-        this.setState({
-            ...this.state,
-            show: !this.state.show  
-        })
-      };
 
-    hideModal = () => {
-        // this.setState({ show: false });
-    };
 
     async componentDidMount() {
         let currentMatches = await getMatches(this.state.currentMatchday);
@@ -64,7 +51,7 @@ class Home extends Component {
     }
 
     render() {
-        const { isLoaded, currentMatches, previousMatches, nextMatches } = this.state;
+        const { isLoaded, currentMatches } = this.state;
         // const newMatches = matches.data.matches;
         // let newMatchesFinished = null;
         // let newMatchesScheduled = null;

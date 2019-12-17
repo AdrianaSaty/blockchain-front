@@ -6,8 +6,8 @@ class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      team1: 'Watford FC',
-      team2: 'Liverpool FC',
+      team1: '',
+      team2: '',
       value1: '',
       value2: '',
     }
@@ -29,13 +29,13 @@ class Modal extends Component {
   }
 
   handleSubmit = async (event) => {
-    const { team1, team2, value1, value2 } = this.state;
+    // const { team1, team2, value1, value2 } = this.state;
     event.preventDefault();
   }
 
   render() {
     const { team1, team2, value1, value2 } = this.state;
-
+console.log(team1)
     if (this.props.show) {
       return null;
     }
@@ -91,7 +91,7 @@ class Modal extends Component {
             </div>
           </form>
           {this.props.children}
-          <span onClick={(e) => { this.onClose(e) }} class="close">&times;</span>
+          <span onClick={(e) => { this.onClose(e) }} className="close">&times;</span>
           <div className="footerStype close">
           </div>
         </div>

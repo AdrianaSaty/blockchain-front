@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import BetForm from '../BetForm/BetForm';
+// import BetForm from '../BetForm/BetForm';
+import Modal from '../../organisms/Modal/Modal';
 
 class TableData extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class TableData extends Component {
   }
 
   handleClick = (event) => {
-
+console.log('aaaaaaaaaa')
     this.setState({
       showBetForm: true,
     })
@@ -20,16 +21,16 @@ class TableData extends Component {
     const { homeTeam, awayTeam } = this.props;
     const { showBetForm } = this.state;
     return (
-      <tr>
-        <td className='align-middle'><button onClick={(event) => this.handleClick(event)} className={`btn btn-outline-warning`} >BET ON HOME TEAM</button></td>
-        {
-          showBetForm ? <BetForm /> : (<></>)
-        }
-        <td className='align-middle'><h5> {homeTeam}</h5></td>
-        <td className='align-middle'><h5> x </h5></td>
-        <td className='align-middle'><h5> {awayTeam} </h5></td>
-        <td className='align-middle'><button className={`btn btn-outline-warning`}>BET ON AWAY TEAM</button></td>
-      </tr>
+        <tr>
+          <td className='align-middle'><button onClick={(event) => this.handleClick(event)} className={`btn btn-outline-warning`} >BET ON HOME TEAM</button></td>
+          {
+            showBetForm ? <Modal team1={homeTeam} team2={awayTeam} /> : (<></>)
+          }
+          <td className='align-middle'><h5> {homeTeam}</h5></td>
+          <td className='align-middle'><h5> x </h5></td>
+          <td className='align-middle'><h5> {awayTeam} </h5></td>
+          <td className='align-middle'><button className={`btn btn-outline-warning`}>BET ON AWAY TEAM</button></td>
+        </tr>
     )
   }
 }
