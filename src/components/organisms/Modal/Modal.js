@@ -34,8 +34,8 @@ class Modal extends Component {
   }
 
   render() {
-    const { team1, team2, value1, value2 } = this.state;
-console.log(team1)
+    console.log(this.props)
+    const { homeTeam, awayTeam, value1, value2 } = this.props;
     if (this.props.show) {
       return null;
     }
@@ -50,9 +50,9 @@ console.log(team1)
               <table>
                 <thead>
                   <tr>
-                    <th><h4> {team1} </h4></th>
+                    <th><h4> {homeTeam} </h4></th>
                     <th className="thMiddle"><h4>x</h4></th>
-                    <th><h4> {team2} </h4></th>
+                    <th><h4> {awayTeam} </h4></th>
                   </tr>
                 </thead>
                 <tbody>
