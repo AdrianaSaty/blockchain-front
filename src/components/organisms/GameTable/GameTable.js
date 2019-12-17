@@ -9,17 +9,19 @@ class GameTable extends Component {
     this.state = {
       show: true,
       homeTeamModal: '',
-      awayTeamModal: ''
+      awayTeamModal: '',
+      teamModal: false
     }
     this.showModal = this.showModal.bind(this);
   }
 
-  showModal = (homeTeam, awayTeam) => {
+  showModal = (homeTeam, awayTeam, team) => {
     this.setState({
       ...this.state,
       show: !this.state.show,
       homeTeamModal: homeTeam,
-      awayTeamModal: awayTeam
+      awayTeamModal: awayTeam,
+      teamModal: team
     })
   };
 
@@ -38,18 +40,18 @@ class GameTable extends Component {
               return (
                 <tr key={game._id}>
                   {/* <td className='align-middle'><button onClick={(e) => this.showModal(e)} className={`btn btn-outline-warning`} >BET ON HOME TEAM</button></td> */}
-                  <td className='align-middle'><button onClick={() => this.showModal(game.homeTeam, game.awayTeam, game._id)} className={`btn btn-outline-warning`} >BET ON HOME TEAM</button></td>
+                  <td className='align-middle'><button onClick={() => this.showModal(game.homeTeam, game.awayTeam, true, game._id)} className={`btn btn-outline-warning`} >BET ON HOME TEAM</button></td>
                   <td className='align-middle'><h5> {game.homeTeam}</h5></td>
                   <td className='align-middle'><h5> x </h5></td>
                   <td className='align-middle'><h5> {game.awayTeam} </h5></td>
-                  <td className='align-middle'><button onClick={() => this.showModal(game.homeTeam, game.awayTeam, game._id)} className={`btn btn-outline-warning`}>BET ON AWAY TEAM</button></td>
+                  <td className='align-middle'><button onClick={() => this.showModal(game.homeTeam, game.awayTeam, false, game._id)} className={`btn btn-outline-warning`}>BET ON AWAY TEAM</button></td>
                 </tr>
               )
             })
             }
           </tbody>
         </table>
-        <Modal homeTeam={this.state.homeTeamModal} awayTeam={this.state.awayTeamModal} onClose={this.showModal} show={this.state.show} />
+        <Modal homeTeam={this.state.homeTeamModal} awayTeam={this.state.awayTeamModal} teamModal={this.state.teamModal} onClose={this.showModal} show={this.state.show} />
       </div>
     )
   };
