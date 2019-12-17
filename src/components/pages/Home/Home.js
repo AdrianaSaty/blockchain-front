@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import GameTable from '../../molecules/GameTable/GameTable';
+import GameTable from '../../organisms/GameTable/GameTable';
 import Modal from '../../organisms/Modal/Modal';
 import YourBetTable from '../../molecules/YourBetTable/YourBetTable';
 import Loading from '../../molecules/Loading/Loading';
@@ -16,6 +16,9 @@ class Home extends Component {
             show: true,
             currentMatchday: 17,
             isLoaded: false,
+            currentMatches: [],
+            previousMatches: [],
+            nextMatches: [],
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -48,19 +51,19 @@ class Home extends Component {
     };
 
     async componentDidMount() {
-        // const { dispatch } = this.props
-        // dispatch(fetchFootbalMatches())
-        // let result = await currentMatchday();
-        let currentMatches = await getMatches(this.state.currentMatchday, localStorage.loggedUser);
-        console.log(currentMatches);
+        let currentMatches = await getMatches(this.state.currentMatchday);
+        let previousMatches = await getMatches(this.state.currentMatchday - 1);
+        let nextMatches = await getMatches(this.state.currentMatchday + 1);
         this.setState({
             isLoaded: true,
+            currentMatches,
+            previousMatches,
+            nextMatches,
         })
     }
 
     render() {
-        // const { matches } = this.props;
-        const { isLoaded } = this.state;
+        const { isLoaded, currentMatches, previousMatches, nextMatches } = this.state;
         // const newMatches = matches.data.matches;
         // let newMatchesFinished = null;
         // let newMatchesScheduled = null;
@@ -74,9 +77,6 @@ class Home extends Component {
         //     });
         // }
 
-
-
-        // console.log(newMatches)
         return isLoaded && (
             <div>
                 {/* {blocks.loading ? "To Carregando block" : (<></>)}
@@ -123,12 +123,12 @@ class Home extends Component {
                         <div className="col p-0">
                             <div className="mr-5 ml-5">
                                 <h2 className="mt-5 txt-center">
-                                    Next Games:
+                                    Current Matchday
                                 </h2>
                                 <div className="shadow-gradient">
                                     <div className="div-scroll">
-                                        {/* {newMatches ? (<></>) : <Loading />}
-                                        {newMatchesScheduled ? newMatchesScheduled.map((match) => <GameTable team1={match.awayTeam.name} team2={match.homeTeam.name} />) : null} */}
+                                        {/* {currentMatches ? (<></>) : <Loading />} */}
+                                        {currentMatches ? <GameTable gamesList={currentMatches} /> : null}
                                     </div>
                                 </div>
                             </div>
