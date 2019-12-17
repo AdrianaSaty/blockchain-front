@@ -10,7 +10,7 @@
 }
 
 .modalStyle {
-  background-color: #2d1063;
+  background-color: #212121; /* purple color: #2d1063 */;
   border: 2px  solid #f2b423;
   border-radius: 5;
   max-width: 500px;
@@ -39,7 +39,7 @@ footerStype {
 
 .close:hover,
 .close:focus {
-  color: #2d1063;
+  color: #212121; /* purple color: #2d1063 */;
   text-decoration: none;
   cursor: pointer;
 }

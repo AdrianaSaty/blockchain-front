@@ -2,7 +2,7 @@
 section {
   height: 100vh;
   width: 100%;
-  background-color: #2d1063;
+  background-color: #212121; /* purple color: #2d1063 */;
 }
 
 .landing-banner .title {
@@ -43,7 +43,7 @@ section {
   background-position: top center;
   background-color: white;
   background-size: cover;
-  color: black;
+  color: #212121;
 }
 
 .landing-features p .first {
@@ -62,7 +62,7 @@ section {
 }
 
 .landing-about-project p{
-  color: #2d1063;
+  color: #212121; /* purple color: #2d1063 */;
   font-size: 25px;
 }
 
@@ -121,7 +121,7 @@ a {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   transition: all 1s;
-  background-color: #2d1063;
+  background-color: #212121; /* purple color: #2d1063 */;
 }
 
 h1,
