@@ -1,0 +1,204 @@
+
+section {
+  height: 100vh;
+  width: 100%;
+  background-color: #212121; /* purple color: #2d1063 */;
+}
+
+.landing-banner .title {
+  transition: 1s;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+}
+
+.landing-banner .title.first-title {
+  opacity: 1;
+  z-index: 2;
+  right: 0;
+  left: 0;
+  margin: 16vh;
+  padding-bottom: 39vh;
+}
+
+.landing-banner .title.second-title {
+  right: 0;
+  left: 0;
+  margin: 15vh;
+}
+
+@media (min-width: 700px) {
+  .landing-banner .title.first-title:hover  {
+    opacity: 0;
+  }
+}
+
+.landing-banner .title.first-title:active {
+  opacity: 0;
+}
+
+
+.landing-features {
+  background-image: url("../../../img/background-funny-text.png");
+  background-position: top center;
+  background-color: white;
+  background-size: cover;
+  color: #212121;
+}
+
+.landing-features p .first {
+  font-size: 60px;
+  position: relative;
+  top: 468px;
+  right: -70px;
+}
+
+.landing-about-project {
+  background-color: white;
+}
+
+.landing-about-project a{
+  background-color: white;
+}
+
+.landing-about-project p{
+  color: #212121; /* purple color: #2d1063 */;
+  font-size: 25px;
+}
+
+.landing-features p .second {
+  font-size: 60px;
+  position: relative;
+  top: -28px;
+  right: -900px;
+}
+
+.landing-container {
+  width: 300px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.landing {
+  height: 95vh;
+}
+
+.landing h1 {
+  font-size: 6vh;
+  text-align: left;
+}
+
+.landing p {
+  font-size: 2.5vh;
+}
+
+.img-about-us{
+  height: 300px;
+  width: 300px;
+}
+
+.col-itens {
+  max-width: 300px;
+}
+
+.landing-titles {
+  font-size: 3vh;
+}
+
+body {
+  background-color: #222222;
+}
+
+/*Neon*/
+h1 {
+  text-align: center;
+  /* font-size: 7em; */
+  margin: 20h1x 0 20px 0;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+  background-color: #212121; /* purple color: #2d1063 */;
+  color: #fff;
+}
+
+h1,
+a {
+  color: #fff;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+h3,
+a {
+  text-align: center;
+  color: #fff;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+h1,
+a:hover {
+  color: #f2b423;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+  text-decoration: none;
+}
+
+h1,
+a {
+  font-size: 20vh;
+  color: white; /*  #ff8400; amarelo claro*/
+}
+
+h3,
+a {
+  font-size: 7,5vh;
+  color: white; /*  #ff8400; amarelo claro*/
+}
+
+
+
+h1,
+a:hover {
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 5px #f2b423, 0 0 10px #f2b423, 0 0 15px #f2b423;
+  }
+  to {
+    text-shadow: 0 0 5px #f2b423, 0 0 10px #f2b423, 0 0 15px #f2b423;
+  }
+}
+
+/*glow for mozilla*/
+
+@-moz-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #f2b423, 0 0 20px #f2b423, 0 0 30px #f2b423;
+  }
+  to {
+    text-shadow: 0 0 5px #f2b423, 0 0 10px #f2b423, 0 0 15px #f2b423;
+  }
+}
+
+/*glow*/
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #f2b423, 0 0 20px #f2b423, 0 0 30px #f2b423;
+  }
+  to {
+    text-shadow: 0 0 5px #f2b423, 0 0 10px #f2b423, 0 0 15px #f2b423;
+  }
+}

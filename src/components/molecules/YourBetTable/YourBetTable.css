@@ -1,0 +1,20 @@
+
+/*---------- TABLE ----------*/
+thead {
+  /* background-color: white; */
+  color: #f2b423;
+}
+thead th {
+  /* color: #f2b423; */
+  font-weight: normal;
+}
+
+table {
+  width: 80%;
+}
+
+td,
+tr {
+  padding: 1px 6px;
+  text-align: center;
+}

@@ -1,22 +1,74 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Iceland&display=swap");
+
+/*---------- GENERAL ----------*/
+* {
+  font-family: Iceland;
+  /* background-color: #2d1063; 51269d */
+
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+*,
+:before,
+:after {
+  box-sizing: border-box;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+body {
+  font-size: 16px;
+  background-color: #212121; /* purple color: #2d1063 */
+
+}
+
+td {
+  color: white;
+}
+
+#title {
+  margin-right: auto;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+
+/*----------  TYPOGRAPHY ------------*/
+.txt-2 {
+  font-size: 30px;
+}
+
+.txt-3 {
+  font-size: 17px;
+}
+
+/*----------  NEON TITLES ------------*/
+
+a.title2 {
+  font-size: 10vh;
+}
+
+a.title3 {
+  font-size: 5vh;
+}
+
+/*---------- SELECT ----------*/
+select {
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.img-features {
+  width: 10rem;
+  height: 10rem;
+}
+
+.img-built-mongo {
+  width: 12rem;
+  height: 5rem;
+  filter: grayscale(80%);
 }
