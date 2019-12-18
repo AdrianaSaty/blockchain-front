@@ -46,21 +46,12 @@ footerStype {
 
 
 /*---------- TABLE ----------*/
+table {
+  width: 300px !important;
+}
+
 thead th {
-  /* color: #f2b423; */
-  font-weight: normal;
-  width:20vh;
-}
-
-.thMiddle {
-  width: 5vh;
-}
-
-table,
-th,
-td {
-  /* border: 1px solid black; */
-  text-align: center;
+  width: 190px !important;
 }
 
 
