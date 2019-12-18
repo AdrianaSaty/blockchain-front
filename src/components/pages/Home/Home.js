@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import GameTable from '../../organisms/GameTable/GameTable';
 import Navbar from '../../organisms/Navbar/Navbar';
-import { getMatches } from '../../../service/football-api';
+import getMatches from '../../../service/football-api';
 import('./Home.css');
 
 

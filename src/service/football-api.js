@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 async function getMatches(matchday) {
   try {
@@ -9,6 +9,4 @@ async function getMatches(matchday) {
   }
 } 
 
-module.exports = {
-  getMatches,
-}
+export default getMatches;
