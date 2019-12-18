@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import api from '../../../api/api';
 import('./Modal.css');
 
 
@@ -27,12 +28,29 @@ class Modal extends Component {
   }
 
   handleSubmit = async (event) => {
-    // const { team1, team2, value1 } = this.state;
+    const { amount, teamModal } = this.state;
+    const { gamePublicKey, gameId } = this.props;
     event.preventDefault();
+
+    const response = await api({
+      url: `${process.env.REACT_APP_BLOCKCHAIN_LOGIN_API}/bets/create-bet`,
+      method: 'POST',
+      data: {
+        team: teamModal ? "HOME_TEAM" : "AWAY_TEAM",
+        amount,
+        gamePublicKey,
+        gameId,
+      }
+    });
+
+    if (response.status === 200) {
+      console.log('APOSTA FEITA PORRA!!!!!!!!');
+    }
   }
 
   render() {
-    const { homeTeam, awayTeam, value1, teamModal } = this.props;
+    const { homeTeam, awayTeam, teamModal } = this.props;
+    const { amount } = this.state;
     if (this.props.show) {
       return null;
     }
@@ -60,11 +78,11 @@ class Modal extends Component {
                     {teamModal ? <div className=''>
                                     <input
                                       className='form-control'
-                                      name='value1'
+                                      name='amount'
                                       placeholder='$0.00'
-                                      value={value1}
-                                      type='text'
-                                      onChange={this.handleChange} />
+                                      value={amount}
+                                      type='number'
+                                      onChange={(event) => this.handleChange(event)} />
                                   </div> 
                       : (<></>)
                     }
@@ -74,11 +92,11 @@ class Modal extends Component {
                       {!teamModal ? <div className=''>
                                       <input
                                         className='form-control'
-                                        name='value1'
+                                        name='amount'
                                         placeholder='$0.00'
-                                        value={value1}
-                                        type='text'
-                                        onChange={this.handleChange} />
+                                        value={amount}
+                                        type='number'
+                                        onChange={(event) => this.handleChange(event)} />
                                     </div> 
                         : (<></>)
                       }
