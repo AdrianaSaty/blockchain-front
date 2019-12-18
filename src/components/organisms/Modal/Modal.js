@@ -32,7 +32,6 @@ class Modal extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { homeTeam, awayTeam, value1, teamModal } = this.props;
     if (this.props.show) {
       return null;

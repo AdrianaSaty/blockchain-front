@@ -26,7 +26,6 @@ class Wallet extends Component {
   }
 
   render() {
-    console.log(this.state)
     const { route, logout } = this.props;
     return (
       <div>

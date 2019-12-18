@@ -113,7 +113,7 @@ class Home extends Component {
 
                         <div className="col p-0">
                             <div className="mr-5 ml-5">
-                                <h2 className="mt-5 txt-center">
+                                <h2 className="mt-2 txt-center">
                                     Current Matchday
                                 </h2>
                                 <div className="shadow-gradient">

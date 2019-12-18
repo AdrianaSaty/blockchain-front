@@ -11,7 +11,6 @@ class TableData extends Component {
   }
 
   handleClick = (event) => {
-console.log('aaaaaaaaaa')
     this.setState({
       showBetForm: true,
     })
