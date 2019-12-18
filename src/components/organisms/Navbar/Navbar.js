@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import { getWalletInfo } from '../../../service/wallet-info-api';
 import api from '../../../api/api'
+import Loading from '../../molecules/Loading/Loading';
 import('./Navbar.css');
 
 class Navbar extends Component {
@@ -36,7 +37,11 @@ class Navbar extends Component {
             <div className="d-flex justify-content-between">
                 <div>
                     <ul className="">
-                        <li><a className="title3 p-2" href='/wallet'>Your Balance: ${this.state.balance}</a></li>
+                        <li>
+                            <a className="title3 p-2 d-flex" href='/wallet'>
+                                Your Balance: $   {this.state.balance ? this.state.balance : <Loading />}
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div className="d-flex justify-content-end">
