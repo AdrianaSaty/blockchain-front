@@ -7,30 +7,26 @@ class Wallet extends Component {
     super(props);
     this.state = {
       walletBalance: '',
-      amount: 0,
-
+      amount: '',
+      sendMessage: '',
+      bets: [],
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
   async componentDidMount() {
-    // let walletBalance = await api({
-    //   url: `https://blotting.herokuapp.com/api/load-balance`,
-    //   method: 'POST',
-    //   data: {
-    //     publicKey: '',
-    //     amount: 
-    //   }
-    // });
+    const response = await api({
+      url: `${process.env.REACT_APP_BLOCKCHAIN_LOGIN_API}/bets/get-bets`,
+      method: 'GET',
+    })
 
-    // if (walletBalance.status === 200) {
-    //   this.setState({ balance: walletBalance.data.balance })
-    // }
-
-
-    // this.setState({
-    //   walletBalance: walletBalance.data
-    // })
+    if (response.status === 200) {
+      this.setState({
+        bets: response.data,
+      })
+    }
   }
 
   handleChange(event) {
@@ -39,11 +35,36 @@ class Wallet extends Component {
     this.setState({
       [name]: value
     });
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+  handleSubmit= async (event) => {
+    const { amount } = this.state;
+    event.preventDefault();
+
+    if (!amount) {
+      this.setState({
+        sendMessage: 'Please insert amount to load'
+      })
+      return;
+    }
+
+    const response = await api({
+      url: `${process.env.REACT_APP_BLOCKCHAIN_LOGIN_API}/wallets/load-balance`,
+      method: 'POST',
+      data: { amount }
+    });
+
+    if (response.status === 200) {
+      this.setState({
+        sendMessage: 'Wallet balance updated successfully'
+      })
+    }
+
   }
 
   render() {
+    console.log(this.state.bets)
+    const { sendMessage } = this.state;
     const { route, logout } = this.props;
     return (
       <div>
@@ -57,6 +78,7 @@ class Wallet extends Component {
                                     <h2 className="mt-5 txt-center">
                                         Last Bets:
                                     </h2>
+
                                 </div>
                             </div>
 
@@ -65,13 +87,16 @@ class Wallet extends Component {
                                     <h2 className="mt-5 txt-center">
                                         Deposit:
                                     </h2>
-                                    <input
-                                      className='form-control'
-                                      name='amount'
-                                      placeholder='$0.00'
-                                      value={this.state.amount}
-                                      type='number'
-                                      onChange={(event) => this.handleChange(event)} />
+                                    <form onSubmit={(event) => this.handleSubmit(event)}>
+                                      <input
+                                        className='form-control'
+                                        name='amount'
+                                        placeholder='$0.00'
+                                        value={this.state.amount}
+                                        type='number'
+                                        onChange={(event) => this.handleChange(event)} />
+                                    </form>
+                                    <h4>{sendMessage}</h4>
                                 </div>
                             </div>
 
