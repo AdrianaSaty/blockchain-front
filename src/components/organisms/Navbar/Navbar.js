@@ -35,15 +35,17 @@ class Navbar extends Component {
     render() {
         return (
             <div className="d-flex justify-content-between">
-                <div>
-                    <ul className="">
-                        <li>
-                            <a className="title3 p-2 d-flex" href='/wallet'>
-                                Your Balance: $   {this.state.balance ? this.state.balance : <Loading />}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                { this.props.route === 'landing' ? <div></div> :  
+                    <div>
+                        <ul className="">
+                            <li>
+                                <a className="title3 p-2 d-flex" href='/wallet'>
+                                    Your Balance: $ {this.state.balance ? this.state.balance : <Loading />}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
                 <div className="d-flex justify-content-end">
                     {this.props.route === 'home' || this.props.route === 'wallet' ? (
                         <ul className="">

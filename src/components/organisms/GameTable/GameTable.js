@@ -40,7 +40,7 @@ class GameTable extends Component {
     console.log(gamesList);
     return (
       <div>
-        <table className='table table-sm table-dark w-50'>
+        <table className='table table-sm table-dark w-75'>
           <TableHeader />
           <tbody>
             {gamesList.map((game) => {
