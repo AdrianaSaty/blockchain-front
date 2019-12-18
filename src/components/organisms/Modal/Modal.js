@@ -9,7 +9,7 @@ class Modal extends Component {
       team1: '',
       team2: '',
       value1: '',
-      value2: '',
+      teamModal: false,
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,13 +29,13 @@ class Modal extends Component {
   }
 
   handleSubmit = async (event) => {
-    // const { team1, team2, value1, value2 } = this.state;
+    // const { team1, team2, value1 } = this.state;
     event.preventDefault();
   }
 
   render() {
     console.log(this.props)
-    const { homeTeam, awayTeam, value1, value2 } = this.props;
+    const { homeTeam, awayTeam, value1, teamModal } = this.props;
     if (this.props.show) {
       return null;
     }
@@ -43,8 +43,10 @@ class Modal extends Component {
     return (
       <div className="backdropStyle">
         <div className="modalStyle">
-          <h3>Your Best Bet:</h3>
-
+          <h2 className="txt-center">Your Best Bet</h2>
+          {teamModal ? <h5 className="text-center">You are betting on {homeTeam}!</h5> : (<></>)}
+          {!teamModal ? <h5 className="text-center">You are betting on {awayTeam}!</h5> : (<></>)}
+          
           <form onSubmit={(event) => this.handleSubmit(event)} className='mt-5 login-form d-flex justify-content-center'>
             <div className='w-100'>
               <table>
@@ -58,27 +60,31 @@ class Modal extends Component {
                 <tbody>
                   <tr>
                     <th>
-                      <div className='form-group'>
-                        <input
-                          className='form-control'
-                          name='value1'
-                          placeholder='$0.00'
-                          value={value1}
-                          type='text'
-                          onChange={this.handleChange} />
-                      </div>
+                    {teamModal ? <div className=''>
+                                    <input
+                                      className='form-control'
+                                      name='value1'
+                                      placeholder='$0.00'
+                                      value={value1}
+                                      type='text'
+                                      onChange={this.handleChange} />
+                                  </div> 
+                      : (<></>)
+                    }
                     </th>
                     <th><h5> </h5></th>
                     <th>
-                      <div className='form-group'>
-                        <input
-                          className='form-control'
-                          name='value2'
-                          placeholder='$0.00'
-                          value={value2}
-                          type='text'
-                          onChange={this.handleChange} />
-                      </div>
+                      {!teamModal ? <div className=''>
+                                      <input
+                                        className='form-control'
+                                        name='value1'
+                                        placeholder='$0.00'
+                                        value={value1}
+                                        type='text'
+                                        onChange={this.handleChange} />
+                                    </div> 
+                        : (<></>)
+                      }
                     </th>
                   </tr>
                 </tbody>
