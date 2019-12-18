@@ -8,9 +8,10 @@ const Navbar = ({ route, logout }) => {
     }
     return (
         <div className="d-flex justify-content-end">
-            {route === 'home' ? (
+            {route === 'home' || route === 'wallet' ? (
                 <ul className="">
-                    <li><a className="title3 p-2" href='/' >Wallet and Bets</a></li>
+                    <li><a className="title3 p-2" href='/home' >Make a Bet</a></li>
+                    <li><a className="title3 p-2" href='/wallet' >Wallet</a></li>
                     <li><a className="title3 p-2" onClick={(event) => onClickFuncs(event)} href='/' >Logout</a></li>
                 </ul>
                 ) : (
