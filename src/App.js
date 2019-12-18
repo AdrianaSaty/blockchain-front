@@ -5,6 +5,7 @@ import Signup from './components/pages/Signup/Signup';
 import Login from './components/pages/Login/Login';
 import LandingPage from './components/pages/LandingPage/LandingPage';
 import Home from './components/pages/Home/Home';
+import Wallet from './components/pages/Wallet/Wallet';
 import PrivateRoute from './router/privateRoute';
 import { Provider } from 'react-redux';
 import store from "./store"
@@ -52,6 +53,7 @@ class App extends Component {
         
             {/* Private Routes */}
             <PrivateRoute exact path='/home' component={Home} isAuth={isUserAuthenticated} route='home' logout={this.logoutUser} />
+            <PrivateRoute exact path='/wallet' component={Wallet} isAuth={isUserAuthenticated} route='wallet' logout={this.logoutUser} />
     
           </Switch>
         </Provider>

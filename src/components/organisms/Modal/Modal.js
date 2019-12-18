@@ -6,9 +6,7 @@ class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      team1: '',
-      team2: '',
-      value1: '',
+      amount: 0,
       teamModal: false,
     }
 

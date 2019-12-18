@@ -69,7 +69,7 @@ class Home extends Component {
             <div>
                 {/* {blocks.loading ? "To Carregando block" : (<></>)}
                 {blocks.data.map((block) => block.hash)} */}
-                <Navbar route='home' logout={this.props.logout} />
+                <Navbar route={this.props.route} logout={this.props.logout} />
                 <div className="">
                     <div className="row line">
                         {/* <div className="col-5 p-0 ">
